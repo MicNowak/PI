@@ -211,19 +211,20 @@ nav > a:nth-last-child(1) {
 }
 
 .screen:nth-child(1) > .image {
-	background-image: url("images/1.jpg");
+	background-image: url("images/1.webp");
 	animation: move-image 15s infinite linear;
 }
 
 .screen:nth-child(2) > .image {
-	background-image: url("images/2.jpg");
+	background-image: url("images/2.webp");
 	animation: move-image 20s infinite linear reverse;
 }
 
 .screen:nth-child(3) > .image {
-	background-image: url("images/3.jpg");
+	background-image: url("images/3.webp");
 	animation: move-image 10s infinite linear alternate-reverse;
 }
+
 .screen > .header-text {
 	position: absolute;
 	bottom: 10rem;
@@ -234,6 +235,7 @@ nav > a:nth-last-child(1) {
 	padding: 2rem;
 	text-align: center;
 }
+
 .screen > .text {
 	position: absolute;
 	bottom: 0;
