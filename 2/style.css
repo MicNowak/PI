@@ -23,30 +23,6 @@
     --primary-700: 116, 8, 64; /* #740840 */
     --primary-800: 92, 6, 51; /* #5c0633 */
     --primary-900: 75, 5, 42; /* #4b052a */
-    /* secondary */
-    --secondary-text: 255, 255, 255; /* white */
-    --secondary-50: 223, 217, 231; /* #dfd9e7 */
-    --secondary-100: 212, 204, 223; /* #d4ccdf */
-    --secondary-200: 202, 191, 215; /* #cabfd7 */
-    --secondary-300: 170, 153, 191; /* #aa99bf */
-    --secondary-400: 106, 77, 144; /* #6a4d90 */
-    --secondary: 42, 0, 96; /* #2a0060 */
-    --secondary-600: 38, 0, 86; /* #260056 */
-    --secondary-700: 32, 0, 72; /* #200048 */
-    --secondary-800: 25, 0, 58; /* #19003a */
-    --secondary-900: 21, 0, 47; /* #15002f */
-    /* tertiary */
-    --tertiary-text: 0, 0, 0; /* black */
-    --tertiary-50: 234, 232, 255; /* #eae8ff */
-    --tertiary-100: 227, 224, 254; /* #e3e0fe */
-    --tertiary-200: 220, 216, 254; /* #dcd8fe */
-    --tertiary-300: 199, 193, 254; /* #c7c1fe */
-    --tertiary-400: 158, 147, 253; /* #9e93fd */
-    --tertiary: 116, 100, 252; /* #7464fc */
-    --tertiary-600: 104, 90, 227; /* #685ae3 */
-    --tertiary-700: 87, 75, 189; /* #574bbd */
-    --tertiary-800: 70, 60, 151; /* #463c97 */
-    --tertiary-900: 57, 49, 123; /* #39317b */
 
     /* banner */
     --banner-height: 4rem;
@@ -86,15 +62,14 @@ nav {
     gap: 0.2rem;
     width: var(--nav-width);
     height: calc(100vh - var(--banner-height));
-    color: rgb(var(--secondary-text));
+    color: rgb(var(--surface-text));
     border-right: 1px solid rgb(var(--surface-700));
 }
 
 nav > a {
     text-decoration: none;
     font-weight: 700;
-    color: rgb(var(--secondary-text));
-    fill: rgb(var(--secondary-text));
+    color: rgb(var(--surface-text));
     padding: 0.8rem 2rem;
     margin: 0.2rem 1rem;
     border-radius: 2px;
@@ -132,7 +107,7 @@ nav > a:nth-last-child(1) {
     gap: 3rem;
     grid-template-columns: repeat(auto-fill, 30rem);
     justify-content: center;
-    background-color: rgb(var(--surface-800));
+    background-color: rgb(var(--surface-800), 0.5);
     border-radius: 0.2rem;
     border: 1px solid rgb(var(--surface));
 }
@@ -141,7 +116,7 @@ nav > a:nth-last-child(1) {
     aspect-ratio: 10 / 16;
     overflow: hidden;
     border-radius: 1rem;
-    border: 2px solid rgb(var(--primary));
+    border: 2px solid rgb(var(--primary-700));
     background-color: rgb(var(--primary), 0.1);
     position: relative;
 }
@@ -152,7 +127,6 @@ nav > a:nth-last-child(1) {
     top: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgb(var(--primary), 0.1); */
     background: linear-gradient(
         rgb(var(--primary), 0.1),
         rgb(var(--primary), 0.1) 2px,
@@ -165,7 +139,7 @@ nav > a:nth-last-child(1) {
 
 @keyframes move-gradient {
     from {
-        background-position: 0% 05;
+        background-position: 0% 0%;
     }
 
     to {
