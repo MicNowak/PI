@@ -114,7 +114,7 @@ nav > a:nth-last-child(1) {
 }
 
 .screen {
-	aspect-ratio: 10 / 16;
+	aspect-ratio: 2 / 3;
 	overflow: hidden;
 	border-radius: 1rem;
 	border: 2px solid rgb(var(--primary-700));
