@@ -232,7 +232,7 @@ nav > a:nth-last-child(1) {
 
 .screen:nth-child(5) > .image {
 	background-image: url("images/5.webp");
-	animation: move-image 25 infinite linear reverse;
+	animation: move-image 25s infinite linear reverse;
 }
 
 .screen:nth-child(6) > .image {
