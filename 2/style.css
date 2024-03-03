@@ -225,6 +225,21 @@ nav > a:nth-last-child(1) {
 	animation: move-image 10s infinite linear alternate-reverse;
 }
 
+.screen:nth-child(4) > .image {
+	background-image: url("images/4.webp");
+	animation: move-image 30s infinite linear;
+}
+
+.screen:nth-child(5) > .image {
+	background-image: url("images/5.webp");
+	animation: move-image 25 infinite linear reverse;
+}
+
+.screen:nth-child(6) > .image {
+	background-image: url("images/6.webp");
+	animation: move-image 15s infinite linear alternate-reverse;
+}
+
 .screen > .header-text {
 	position: absolute;
 	bottom: 10rem;
