@@ -114,7 +114,7 @@ nav > a:nth-last-child(1) {
 }
 
 .screen {
-	aspect-ratio: 10 / 16;
+	aspect-ratio: 2 / 3;
 	overflow: hidden;
 	border-radius: 1rem;
 	border: 2px solid rgb(var(--primary-700));
@@ -211,19 +211,35 @@ nav > a:nth-last-child(1) {
 }
 
 .screen:nth-child(1) > .image {
-	background-image: url("images/1.jpg");
+	background-image: url("images/1.webp");
 	animation: move-image 15s infinite linear;
 }
 
 .screen:nth-child(2) > .image {
-	background-image: url("images/2.jpg");
+	background-image: url("images/2.webp");
 	animation: move-image 20s infinite linear reverse;
 }
 
 .screen:nth-child(3) > .image {
-	background-image: url("images/3.jpg");
+	background-image: url("images/3.webp");
 	animation: move-image 10s infinite linear alternate-reverse;
 }
+
+.screen:nth-child(4) > .image {
+	background-image: url("images/4.webp");
+	animation: move-image 30s infinite linear;
+}
+
+.screen:nth-child(5) > .image {
+	background-image: url("images/5.webp");
+	animation: move-image 25s infinite linear reverse;
+}
+
+.screen:nth-child(6) > .image {
+	background-image: url("images/6.webp");
+	animation: move-image 15s infinite linear alternate-reverse;
+}
+
 .screen > .header-text {
 	position: absolute;
 	bottom: 10rem;
@@ -234,6 +250,7 @@ nav > a:nth-last-child(1) {
 	padding: 2rem;
 	text-align: center;
 }
+
 .screen > .text {
 	position: absolute;
 	bottom: 0;
@@ -242,4 +259,17 @@ nav > a:nth-last-child(1) {
 	width: 100%;
 	padding: 2rem;
 	text-align: center;
+}
+
+::-webkit-scrollbar {
+	width: 0.7rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(var(--surface-800));
+	border: 1px solid rgb(var(--surface));
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(var(--surface-700));
 }
