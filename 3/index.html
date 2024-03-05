@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>lab3</title>
+    </head>
+    <body>
+        <script src="script.js" defer></script>
+        <div id="menu">
+            <div>
+                <label>
+                    <input type="radio" name="symbol" value="X" checked />
+                    X
+                </label>
+                <label>
+                    <input type="radio" name="symbol" value="O" />
+                    O
+                </label>
+            </div>
+            <button onclick="startGame('pvp')">PvP</button>
+            <button onclick="startGame('easy')">Easy</button>
+            <button onclick="startGame('medium')">Medium</button>
+            <button onclick="startGame('hard')">Hard</button>
+        </div>
+        <table id="board" hidden>
+            <tr>
+                <td><button onclick="makeMove(0)" disabled></button></td>
+                <td><button onclick="makeMove(1)" disabled></button></td>
+                <td><button onclick="makeMove(2)" disabled></button></td>
+            </tr>
+            <tr>
+                <td><button onclick="makeMove(3)" disabled></button></td>
+                <td><button onclick="makeMove(4)" disabled></button></td>
+                <td><button onclick="makeMove(5)" disabled></button></td>
+            </tr>
+            <tr>
+                <td><button onclick="makeMove(6)" disabled></button></td>
+                <td><button onclick="makeMove(7)" disabled></button></td>
+                <td><button onclick="makeMove(8)" disabled></button></td>
+            </tr>
+        </table>
+    </body>
+</html>
