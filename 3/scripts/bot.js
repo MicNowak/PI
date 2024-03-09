@@ -35,27 +35,22 @@ class Bot {
 		} else if (board.every((x) => x !== "")) {
 			return 0;
 		}
+		let getBetterScore, bestScore;
 		if (this.sign === sign) {
-			let bestScore = -Infinity;
-			for (let i = 0; i < 9; i++) {
-				if (board[i] !== "") continue;
-				board[i] = sign;
-				let score = this.#minimax(board, depth + 1, nextSign);
-				board[i] = "";
-				bestScore = Math.max(bestScore, score);
-			}
-			return bestScore;
+			getBetterScore = Math.max;
+			bestScore = -Infinity;
 		} else {
-			let bestScore = Infinity;
-			for (let i = 0; i < 9; i++) {
-				if (board[i] !== "") continue;
-				board[i] = sign;
-				let score = this.#minimax(board, depth + 1, nextSign);
-				board[i] = "";
-				bestScore = Math.min(bestScore, score);
-			}
-			return bestScore;
+			getBetterScore = Math.min;
+			bestScore = Infinity;
 		}
+		for (let i = 0; i < 9; i++) {
+			if (board[i] !== "") continue;
+			board[i] = sign;
+			let score = this.#minimax(board, depth + 1, nextSign);
+			board[i] = "";
+			bestScore = getBetterScore(bestScore, score);
+		}
+		return bestScore;
 	}
 
 	/**
