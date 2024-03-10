@@ -28,13 +28,13 @@ function checkIfWin(board) {
 		[0, 4, 8],
 		[2, 4, 6],
 	];
-	winningCellsCominations.forEach((cells) => {
+	for (const cellCombination of winningCellsCominations) {
 		if (
-			cells.every((x) => board[x] === "X") ||
-			cells.every((x) => board[x] === "O")
+			cellCombination.every((x) => board[x] === "X") ||
+			cellCombination.every((x) => board[x] === "O")
 		)
 			return true;
-	});
+	}
 	return false;
 }
 
