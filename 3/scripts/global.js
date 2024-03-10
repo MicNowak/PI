@@ -18,28 +18,24 @@ const board = Array.from(
  * @returns {boolean}
  */
 function checkIfWin(board) {
-	// rows and columns
-	for (let i = 0; i < 3; i++) {
-		const row = [board[3 * i], board[3 * i + 1], board[3 * i + 2]];
-		const column = [board[i], board[i + 3], board[i + 6]];
-		// check row
-		if (row.every((x) => x == "X") || row.every((x) => x == "O")) {
+	let winningCellsCominations = [
+		[0, 1, 2],
+		[3, 4, 5],
+		[6, 7, 8],
+		[0, 3, 6],
+		[1, 4, 7],
+		[2, 5, 8],
+		[0, 4, 8],
+		[2, 4, 6],
+	];
+	winningCellsCominations.forEach((cells) => {
+		if (
+			cells.every((x) => board[x] === "X") ||
+			cells.every((x) => board[x] === "O")
+		)
 			return true;
-		}
-		// check column
-		if (column.every((x) => x == "X") || column.every((x) => x == "O")) {
-			return true;
-		}
-	}
-	// diagonal
-	const diagonal1 = [board[0], board[4], board[8]];
-	const diagonal2 = [board[2], board[4], board[6]];
-	return (
-		diagonal1.every((x) => x == "X") ||
-		diagonal1.every((x) => x == "O") ||
-		diagonal2.every((x) => x == "X") ||
-		diagonal2.every((x) => x == "O")
-	);
+	});
+	return false;
 }
 
 /**
