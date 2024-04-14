@@ -23,11 +23,6 @@
 	<Navigation onClick={drawerClose} />
 </Drawer>
 
-<svelte:head>
-	<title>RWD + SPA</title>
-	<meta name="description" content="Responsive Web Design + Single Page Application" />
-</svelte:head>
-
 <AppShell slotSidebarLeft="w-0 md:w-52 bg-surface-500/10">
 	<svelte:fragment slot="header">
 		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
