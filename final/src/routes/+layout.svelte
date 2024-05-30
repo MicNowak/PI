@@ -26,9 +26,23 @@
 		lang = value;
 	});
 	$: {
-		setCookie('lang', lang, 365);
 		langStore.set(lang);
 	}
+	let cookieConsent = getCookie('cookie-consent') === 'true' ? 'true' : 'false';
+	if (cookieConsent === 'true') {
+		setCookie('lang', getCookie('lang'), 30);
+		setCookie('cookie-consent', true, 30);
+	}
+	const cookieInfo = {
+		pl: {
+			header: 'Ta strona używa plików cookies',
+			text: 'Używamy plików cookies, aby zapewnić najlepsze doświadczenia na stronie. Korzystając z strony, zgadzasz się na naszą politykę plików cookies.'
+		},
+		en: {
+			header: 'This site uses cookies',
+			text: 'We use cookies to ensure you get the best experience on website. By using  website you agree to our Cookie Policy.'
+		}
+	};
 </script>
 
 <Drawer>
@@ -69,4 +83,29 @@
 	<div class="container p-10 mx-auto">
 		<slot />
 	</div>
+	<svelte:fragment slot="footer">
+		<div class="container mx-auto p-4 text-center text-sm text-surface-500/50">
+			&copy; {new Date().getFullYear()} Michał Nowak Portfolio
+		</div>
+		{#if cookieConsent !== 'true'}
+			<div class="card p-4">
+				<strong class="text-xl">
+					cookieInfo[{lang}.header]
+				</strong>
+				<p>
+					cookieInfo[{lang}.text]
+				</p>
+				<button
+					class="btn btn-sm variant-filled"
+					on:click={() => {
+						setCookie('lang', lang, 30);
+						setCookie('cookie-consent', true, 30);
+						cookieConsent = 'true';
+					}}
+				>
+					Accept
+				</button>
+			</div>
+		{/if}
+	</svelte:fragment>
 </AppShell>
