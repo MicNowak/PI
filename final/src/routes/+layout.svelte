@@ -27,6 +27,9 @@
 	});
 	$: {
 		langStore.set(lang);
+		if (cookieConsent === 'true') {
+			setCookie('lang', lang, 30);
+		}
 	}
 	let cookieConsent = getCookie('cookie-consent') === 'true' ? 'true' : 'false';
 	if (cookieConsent === 'true') {
@@ -84,19 +87,18 @@
 		<slot />
 	</div>
 	<svelte:fragment slot="footer">
-		<div class="container mx-auto p-4 text-center text-sm text-surface-500/50">
-			&copy; {new Date().getFullYear()} Michał Nowak Portfolio
-		</div>
 		{#if cookieConsent !== 'true'}
-			<div class="card p-4">
-				<strong class="text-xl">
-					cookieInfo[{lang}.header]
-				</strong>
-				<p>
-					cookieInfo[{lang}.text]
-				</p>
+			<aside class="alert variant-ghost">
+				<div class="alert-message text-center">
+					<h3 class="h3">
+						{cookieInfo[lang].header}
+					</h3>
+					<p>
+						{cookieInfo[lang].text}
+					</p>
+				</div>
 				<button
-					class="btn btn-sm variant-filled"
+					class="alert-action btn btn-md variant-filled"
 					on:click={() => {
 						setCookie('lang', lang, 30);
 						setCookie('cookie-consent', true, 30);
@@ -105,7 +107,7 @@
 				>
 					Accept
 				</button>
-			</div>
+			</aside>
 		{/if}
 	</svelte:fragment>
 </AppShell>
